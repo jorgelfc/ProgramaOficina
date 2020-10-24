@@ -7,6 +7,7 @@ package br.com.oficina.telas;
 
 import java.sql.*;
 import br.com.oficina.dal.ModuloConexao;
+import java.awt.Color;
 import java.util.*;
 import javax.swing.JOptionPane;
 
@@ -32,17 +33,21 @@ public class TelaLogin extends javax.swing.JFrame {
             pst.setString(2, txtPassword.getText());
             rs = pst.executeQuery();
             if(rs.next()){
-                String nivel =rs.getString(6);
-                if (nivel.equals("admin")){                  
-                              
+                String Perfil = rs.getString(6);
+                if (Perfil.equals("administrador")){                                                
                 TelaPrincipal principal = new TelaPrincipal();
                 principal.setVisible(true);
                 TelaPrincipal.MenuRel.setEnabled(true);
+                TelaPrincipal.MenuCadUsu.setEnabled(true);
+                TelaPrincipal.lblUser.setText(rs.getString(2));
+                TelaPrincipal.lblUser.setForeground(Color.red);
+                                
                 this.dispose();
                 //conexao.close();
                 }else {
                 TelaPrincipal principal = new TelaPrincipal();
                 principal.setVisible(true);
+                TelaPrincipal.lblUser.setText(rs.getString(2));
                 this.dispose();
                 }
                 
@@ -181,7 +186,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtLoginActionPerformed
 
     private void btnOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOKActionPerformed
-
+        
         logar();
         
 

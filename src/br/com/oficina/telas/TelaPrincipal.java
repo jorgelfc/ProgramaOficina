@@ -40,6 +40,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         lblData = new javax.swing.JLabel();
         Desktop = new javax.swing.JDesktopPane();
+        lblUser = new javax.swing.JLabel();
         Menu = new javax.swing.JMenuBar();
         MenuCad = new javax.swing.JMenu();
         MenuCadUsu = new javax.swing.JMenuItem();
@@ -67,14 +68,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         lblData.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        lblData.setText("DATA");
 
         Desktop.setBackground(new java.awt.Color(175, 189, 203));
         Desktop.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         Desktop.setOpaque(false);
 
+        lblUser.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        lblUser.setText("Usuario");
+        lblUser.setPreferredSize(new java.awt.Dimension(640, 480));
+
         MenuCad.setText("Cadastro");
 
         MenuCadUsu.setText("Usuario");
+        MenuCadUsu.setEnabled(false);
         MenuCad.add(MenuCadUsu);
 
         MenuCadOs.setText("OS");
@@ -124,8 +131,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Desktop, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblData, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblData, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(lblUser, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)))
                 .addGap(7, 7, 7))
         );
         layout.setVerticalGroup(
@@ -135,11 +147,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblData, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblUser, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(Desktop, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)))
         );
 
-        setSize(new java.awt.Dimension(780, 485));
+        setSize(new java.awt.Dimension(782, 485));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -148,6 +162,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Date data = new Date();
         DateFormat formatador = DateFormat.getDateInstance(DateFormat.SHORT);
         lblData.setText(formatador.format(data));
+        
     }//GEN-LAST:event_formWindowActivated
 
     /**
@@ -191,7 +206,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem MenuAjuSob;
     private javax.swing.JMenu MenuCad;
     private javax.swing.JMenuItem MenuCadOs;
-    private javax.swing.JMenuItem MenuCadUsu;
+    public static javax.swing.JMenuItem MenuCadUsu;
     private javax.swing.JMenuItem MenuCadVeic;
     private javax.swing.JMenuItem MenuPesFrota;
     private javax.swing.JMenuItem MenuPesOs;
@@ -202,5 +217,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu MenuSair;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JLabel lblData;
+    public static javax.swing.JLabel lblUser;
     // End of variables declaration//GEN-END:variables
 }
