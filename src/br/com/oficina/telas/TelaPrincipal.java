@@ -73,6 +73,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Desktop.setBackground(new java.awt.Color(175, 189, 203));
         Desktop.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         Desktop.setOpaque(false);
+        Desktop.setPreferredSize(new java.awt.Dimension(640, 480));
 
         lblUser.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         lblUser.setText("Usuario");
@@ -82,6 +83,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         MenuCadUsu.setText("Usuario");
         MenuCadUsu.setEnabled(false);
+        MenuCadUsu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuCadUsuActionPerformed(evt);
+            }
+        });
         MenuCad.add(MenuCadUsu);
 
         MenuCadOs.setText("OS");
@@ -130,14 +136,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(Desktop, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Desktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblData, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
+                        .addComponent(lblData, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(3, 3, 3)
-                        .addComponent(lblUser, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)))
+                        .addComponent(lblUser, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                 .addGap(7, 7, 7))
         );
         layout.setVerticalGroup(
@@ -150,7 +156,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(lblUser, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(Desktop, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)))
+                    .addComponent(Desktop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         setSize(new java.awt.Dimension(782, 485));
@@ -164,6 +170,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lblData.setText(formatador.format(data));
         
     }//GEN-LAST:event_formWindowActivated
+
+    private void MenuCadUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCadUsuActionPerformed
+        // As linhas abaixo abrem a tela usuario.
+        TelaUsuario tusuario = new TelaUsuario();
+        tusuario.setVisible(true);
+        Desktop.add(tusuario);
+    }//GEN-LAST:event_MenuCadUsuActionPerformed
 
     /**
      * @param args the command line arguments
