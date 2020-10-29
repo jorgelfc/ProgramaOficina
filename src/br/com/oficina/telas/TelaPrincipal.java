@@ -49,9 +49,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         MenuRel = new javax.swing.JMenu();
         MenuRelServ = new javax.swing.JMenuItem();
         MenuRelFrota = new javax.swing.JMenuItem();
-        MenuPesq = new javax.swing.JMenu();
-        MenuPesOs = new javax.swing.JMenuItem();
-        MenuPesFrota = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         MenuAjuSob = new javax.swing.JMenuItem();
         MenuSair = new javax.swing.JMenu();
@@ -112,23 +109,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         MenuRel.setText("Relatorio");
         MenuRel.setEnabled(false);
 
-        MenuRelServ.setText("Servicos");
+        MenuRelServ.setText("OS");
         MenuRel.add(MenuRelServ);
 
         MenuRelFrota.setText("Frota");
         MenuRel.add(MenuRelFrota);
 
         Menu.add(MenuRel);
-
-        MenuPesq.setText("Pesquisar");
-
-        MenuPesOs.setText("OS");
-        MenuPesq.add(MenuPesOs);
-
-        MenuPesFrota.setText("Frota");
-        MenuPesq.add(MenuPesFrota);
-
-        Menu.add(MenuPesq);
 
         jMenu1.setText("Ajuda");
 
@@ -162,13 +149,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Desktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblUser, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                    .addComponent(lblData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblUser, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -272,9 +256,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem MenuCadOs;
     public static javax.swing.JMenuItem MenuCadUsu;
     private javax.swing.JMenuItem MenuCadVeic;
-    private javax.swing.JMenuItem MenuPesFrota;
-    private javax.swing.JMenuItem MenuPesOs;
-    private javax.swing.JMenu MenuPesq;
     public static javax.swing.JMenu MenuRel;
     private javax.swing.JMenuItem MenuRelFrota;
     private javax.swing.JMenuItem MenuRelServ;
