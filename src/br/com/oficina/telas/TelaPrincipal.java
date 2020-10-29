@@ -55,6 +55,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         MenuAjuSob = new javax.swing.JMenuItem();
         MenuSair = new javax.swing.JMenu();
+        mSair = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema para Controle Oficina");
@@ -91,9 +92,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
         MenuCad.add(MenuCadUsu);
 
         MenuCadOs.setText("OS");
+        MenuCadOs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuCadOsActionPerformed(evt);
+            }
+        });
         MenuCad.add(MenuCadOs);
 
         MenuCadVeic.setText("Veiculo");
+        MenuCadVeic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuCadVeicActionPerformed(evt);
+            }
+        });
         MenuCad.add(MenuCadVeic);
 
         Menu.add(MenuCad);
@@ -127,6 +138,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Menu.add(jMenu1);
 
         MenuSair.setText("Sair");
+        MenuSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuSairActionPerformed(evt);
+            }
+        });
+
+        mSair.setText("Sair");
+        mSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mSairActionPerformed(evt);
+            }
+        });
+        MenuSair.add(mSair);
+
         Menu.add(MenuSair);
 
         setJMenuBar(Menu);
@@ -140,23 +165,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblData, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE))
+                        .addComponent(lblData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblUser, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                .addGap(7, 7, 7))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblData, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblUser, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(Desktop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(lblData, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblUser, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 310, Short.MAX_VALUE))
+            .addComponent(Desktop, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
         );
 
         setSize(new java.awt.Dimension(782, 485));
@@ -177,6 +200,34 @@ public class TelaPrincipal extends javax.swing.JFrame {
         tusuario.setVisible(true);
         Desktop.add(tusuario);
     }//GEN-LAST:event_MenuCadUsuActionPerformed
+
+    private void MenuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuSairActionPerformed
+        
+        //System.exit(0);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuSairActionPerformed
+
+    private void mSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mSairActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_mSairActionPerformed
+
+    private void MenuCadOsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCadOsActionPerformed
+        // TODO add your handling code here:
+        Tela_OS T_OS = new Tela_OS();
+        T_OS.setVisible(true);
+        
+
+        //Desktop.add(T_OS);
+        
+    }//GEN-LAST:event_MenuCadOsActionPerformed
+
+    private void MenuCadVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCadVeicActionPerformed
+        // TODO add your handling code here:
+        TelaVeiculos T_veic = new TelaVeiculos();
+        T_veic.setVisible(true);
+        Desktop.add(T_veic);
+    }//GEN-LAST:event_MenuCadVeicActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,9 +278,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public static javax.swing.JMenu MenuRel;
     private javax.swing.JMenuItem MenuRelFrota;
     private javax.swing.JMenuItem MenuRelServ;
-    private javax.swing.JMenu MenuSair;
+    public static javax.swing.JMenu MenuSair;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JLabel lblData;
     public static javax.swing.JLabel lblUser;
+    private javax.swing.JMenuItem mSair;
     // End of variables declaration//GEN-END:variables
 }
